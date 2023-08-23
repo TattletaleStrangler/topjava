@@ -33,7 +33,6 @@ public class UserMealsUtil {
 
         for(UserMeal meal : meals) {
             LocalDate date = meal.getDateTime().toLocalDate();
-//            sumCaloriesPerDay.put(date,  sumCaloriesPerDay.getOrDefault(date, 0) + meal.getCalories());
             sumCaloriesPerDay.put(date,  sumCaloriesPerDay.merge(date, meal.getCalories(), Integer::sum));
         }
 
