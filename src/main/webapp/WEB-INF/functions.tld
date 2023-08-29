@@ -10,7 +10,7 @@
     <uri>https://topjava.ru/functions</uri>
 
     <function>
-        <name>TimeUtil</name>
+        <name>formatDateTime</name>
         <function-class>ru.javawebinar.topjava.util.TimeUtil</function-class>
         <function-signature>java.lang.String toString(java.time.LocalDateTime)</function-signature>
     </function>
