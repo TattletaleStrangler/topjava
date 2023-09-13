@@ -28,6 +28,10 @@ public class MealsUtil {
     );
 
     public static boolean isExcess(List<Meal> meals, int caloriesPerDay) {
+        if (meals == null || meals.size() == 0) {
+            return false;
+        }
+
         Map<LocalDate, Integer> caloriesSumByDate = meals.stream()
                 .collect(
                       Collectors.toMap(Meal::getDate, Meal::getCalories, Integer::sum)
