@@ -13,6 +13,10 @@ public class MealTestData {
     public static final int USER_BREAKFAST = START_SEQ + 3;
     public static final int USER_LUNCH = START_SEQ + 4;
     public static final int USER_DINNER = START_SEQ + 5;
+    public static final int ADMIN_BORDER = START_SEQ + 6;
+    public static final int ADMIN_BREAKFAST = START_SEQ + 7;
+    public static final int ADMIN_LUNCH = START_SEQ + 8;
+    public static final int ADMIN_DINNER = START_SEQ + 9;
 
 
     public static final int NOT_FOUND = 10;
@@ -20,10 +24,10 @@ public class MealTestData {
     public static final Meal userBreakfast = new Meal(USER_BREAKFAST, LocalDateTime.of(2020, Month.JANUARY, 30, 10, 0, 0), "Завтрак", 500);
     public static final Meal userLunch = new Meal(USER_LUNCH, LocalDateTime.of(2020, Month.JANUARY, 30, 13, 0, 0), "Обед", 1000);
     public static final Meal userDinner = new Meal(USER_DINNER, LocalDateTime.of(2020, Month.JANUARY, 30, 20, 0, 0), "Ужин", 500);
-    public static final Meal adminBreakfast = new Meal(LocalDateTime.of(2020, Month.JANUARY, 31, 10, 0, 0), "Завтрак", 1000);
-    public static final Meal adminLunch = new Meal(LocalDateTime.of(2020, Month.JANUARY, 31, 13, 0, 0), "Обед", 500);
-    public static final Meal adminDinner = new Meal(LocalDateTime.of(2020, Month.JANUARY, 31, 20, 0, 0), "Ужин", 410);
-    public static final Meal adminBorderValue = new Meal(LocalDateTime.of(2020, Month.JANUARY, 31, 00, 0, 0), "Еда на граничное значение", 100);
+    public static final Meal adminBreakfast = new Meal(ADMIN_BREAKFAST, LocalDateTime.of(2020, Month.JANUARY, 31, 10, 0, 0), "Завтрак", 1000);
+    public static final Meal adminLunch = new Meal(ADMIN_LUNCH, LocalDateTime.of(2020, Month.JANUARY, 31, 13, 0, 0), "Обед", 500);
+    public static final Meal adminDinner = new Meal(ADMIN_DINNER, LocalDateTime.of(2020, Month.JANUARY, 31, 20, 0, 0), "Ужин", 410);
+    public static final Meal adminBorderValue = new Meal(ADMIN_BORDER, LocalDateTime.of(2020, Month.JANUARY, 31, 00, 0, 0), "Еда на граничное значение", 100);
 
     public static Meal getNew() {
         return new Meal(null, LocalDateTime.of(2024, Month.JANUARY, 14, 13, 0, 0), "newMeal", 500);
