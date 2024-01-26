@@ -8,9 +8,21 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 
+@NamedQueries({
+        @NamedQuery(name = Meal.DELETE, query = "DELETE FROM Meal m WHERE m.id=:id AND m.user.id=:userId"),
+        @NamedQuery(name = Meal.BY_ID, query = "SELECT m FROM Meal m WHERE m.id=:id AND m.user.id=:userId"),
+        @NamedQuery(name = Meal.BY_USER_ID, query = "SELECT m FROM Meal m WHERE m.user.id=:userId ORDER BY m.dateTime DESC"),
+        @NamedQuery(name = Meal.BY_START_AND_END, query = "SELECT m FROM Meal m WHERE m.user.id=:userId " +
+                "AND m.dateTime>=:startDateTime AND m.dateTime<:endDateTime ORDER BY m.dateTime DESC"),
+})
 @Entity
 @Table(name = "meal")
 public class Meal extends AbstractBaseEntity {
+
+    public static final String DELETE = "Meal.delete";
+    public static final String BY_ID = "Meal.getById";
+    public static final String BY_USER_ID = "Meal.getByUserId";
+    public static final String BY_START_AND_END = "Meal.getByStartAndEnd";
 
     @Column(name = "date_time", nullable = false)
     @NotNull
